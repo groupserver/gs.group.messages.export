@@ -21,5 +21,18 @@
     for="Products.XWFMailingListManager.interfaces.IGSMessagesFolder"
     class=".view.PostsJSON"
     permission="zope2.View" />
+  <browser:page
+    name="gs-group-messages-export-mbox"
+    for="Products.XWFMailingListManager.interfaces.IGSMessagesFolder"
+    class=".view.MessageTraversal"
+    permission="zope2.Public" />
+  <class class=".view.MessageTraversal">
+    <implements interface="zope.publisher.interfaces.IPublishTraverse"/>
+  </class>
+  <browser:page
+    name="mbox"
+    for="gs.group.list.email.text.interfaces.IPost"
+    class=".view.MBox"
+    permission="zope2.View" />
 
 </configure>
