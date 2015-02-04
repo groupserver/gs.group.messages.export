@@ -35,8 +35,9 @@ the off-site archive of messages.
 
 The ``gs-group-messages-export-posts.json`` view (in the
 ``messages`` context) provides a list of post-identifiers in JSON
-format. The month is specified using the ``month`` query-string;
-the current month is returned if no query-string is provided.
+format. The month is specified using the ``month`` query-string:
+a six-digit ``yyyymm`` value us expected. The current month is
+returned if no query-string is provided.
 
 The posts are downloaded by the JavaScript_ that assembles the
 posts into a single ``mbox`` file.

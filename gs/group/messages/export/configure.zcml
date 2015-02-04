@@ -16,4 +16,10 @@
 
   <include package="zope.viewlet" file="meta.zcml" />
 
+  <browser:page
+    name="gs-group-messages-export-posts.json"
+    for="Products.XWFMailingListManager.interfaces.IGSMessagesFolder"
+    class=".view.PostsJSON"
+    permission="zope2.View" />
+
 </configure>
