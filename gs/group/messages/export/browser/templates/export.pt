@@ -56,7 +56,8 @@
             <div class="gs-group-messages-export-list-item-buttons btn-group">
               <button class="btn gs-group-messages-export-list-item-buttons-generate"
                       data-month="201502"
-                      tal:attributes="data-month string:${month/year}${month/month}"
+                      tal:define="m python:month['date'].strftime('%Y%m');"
+                      tal:attributes="data-month m"
                       i18n:translate="generate-future">Generate</button>
               <button class="btn" href="#" data-icon="&#xe002;"
                       disabled="disabled"
@@ -71,6 +72,9 @@
           </div><!--gs-group-messages-export-list-item-->
         </tal:block>
       </div><!--gs-group-messages-export-list-->
-    </div><!--a-page-->
+    </div><!--gs-group-messages-export-->
+    <script metal:fill-slot="javascript" id="gs-group-messages-export-script"
+            type="text/javascript" defer="defer"
+            src="/++resource++gs-group-messages-export-20150210.js"> </script>
   </body>
 </html>

@@ -22,6 +22,12 @@
     class=".view.Export"
     template="browser/templates/export.pt"
     permission="zope2.ManageProperties" />
+
+  <browser:resource
+    name="gs-group-messages-export-20150210.js"
+    file="browser/javascript/export.js"
+    permission="zope2.Public" />
+
   <browser:page
     name="gs-group-messages-export-posts.json"
     for="Products.XWFMailingListManager.interfaces.IGSMessagesFolder"
