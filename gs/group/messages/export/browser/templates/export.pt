@@ -34,7 +34,16 @@
               tal:content="view/groupInfo/name">this group</span>
       </h1>
       <p i18n:translate="page-intro" class="muted intro">
-        Posts. <code>mbox</code>. concatenated. Stuff.
+        To save the posts made to
+        <span class="group" i18n:name="groupName"
+              tal:content="view/groupInfo/name">this group</span>
+        as an <code>mbox</code> file select a month and click the
+        <samp class="button">Generate</samp> button.
+        An <code>mbox</code> file containing all posts in that
+        month will be generated and the
+        <samp class="button">Save</samp> button made available.
+        Click the <samp class="button">Save</samp> button to
+        store the <code>mbox</code> file.
       </p>
       <div id="gs-group-messages-export-list" role="list">
         <tal:block repeat="month view/months">
@@ -44,6 +53,21 @@
                role="listitem">
             <h2 tal:attributes="id string:gs-group-messages-export-list-item-${month/year}${month/month}-h"
               tal:content="python:month['date'].strftime('%Y %b')">A month</h2>
+            <div class="gs-group-messages-export-list-item-buttons btn-group">
+              <button class="btn gs-group-messages-export-list-item-buttons-generate"
+                      data-month="201502"
+                      tal:attributes="data-month string:${month/year}${month/month}"
+                      i18n:translate="generate-future">Generate</button>
+              <button class="btn" href="#" data-icon="&#xe002;"
+                      disabled="disabled"
+                      download="posts.mbox"
+                      tal:attributes="download string:${view/siteInfo/id}-${view/groupInfo/id}-posts-${month/year}-${month/month}.mbox"
+                      i18n:attributes="download"
+                      i18n:translate="save">Save</button>
+            </div><!--gs-group-messages-export-list-item-buttons-->
+            <div class="progress hide">
+              <div class="bar bar-progress"></div>
+            </div><!--progress-->
           </div><!--gs-group-messages-export-list-item-->
         </tal:block>
       </div><!--gs-group-messages-export-list-->
