@@ -32,7 +32,7 @@
   <browser:page
     name="mbox"
     for="gs.group.list.email.text.interfaces.IPost"
-    class=".view.MBox"
+    class=".mbox.MBox"
     permission="zope2.View" />
 
 </configure>
