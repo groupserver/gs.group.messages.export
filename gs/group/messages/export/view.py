@@ -13,6 +13,7 @@
 #
 ############################################################################
 from __future__ import absolute_import, unicode_literals, print_function
+from datetime import date
 from json import dumps as dump_json
 from logging import getLogger
 log = getLogger('gs.group.messages.export')
@@ -22,6 +23,25 @@ from gs.core import curr_time
 from gs.group.base import GroupPage
 from gs.group.list.email.text.post import Post
 from .queries import PostsQuery
+
+
+class Export(GroupPage):
+    'Export posts from a group'
+
+    @Lazy
+    def query(self):
+        retval = PostsQuery()
+        return retval
+
+    @Lazy
+    def months(self):
+        retval = self.query.months_with_posts(self.siteInfo.id,
+                                              self.groupInfo.id)
+        for r in retval:
+            r['year'] = int(r['year'])
+            r['month'] = int(r['month'])
+            r['date'] = date(r['year'], r['month'], 1)
+        return retval
 
 
 class PostsJSON(GroupPage):

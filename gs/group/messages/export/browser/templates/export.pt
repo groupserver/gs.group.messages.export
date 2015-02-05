@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="gs.group.messages.export"
+      metal:use-macro="context/@@groupserver_full_layout/page">
+  <head>
+    <title metal:fill-slot="title">
+      <tal:block i18n:translate="export-label">Export messages</tal:block>:
+      <tal:block replace="view/groupInfo/name">This group</tal:block>:
+      <tal:block replace="view/siteInfo/name">This site</tal:block>
+    </title>
+  </head>
+  <body>
+    <ul metal:fill-slot="breadcrumb">
+      <li>
+        <a href="/" class="icon-alone">
+          <span aria-hidden="true" data-icon="&#x2302;"></span>
+          <span class="screen-reader-text">Site home page</span>
+        </a>
+     </li>
+      <li>
+        <a class="group" href="/"
+           tal:attributes="href view/groupInfo/relativeURL"
+           tal:content="view/groupInfo/name">This group</a>
+     </li>
+     <li i18n:translate="export-label">Export messages</li>
+    </ul>
+    <div id="gs-group-messages-export" metal:fill-slot="body"
+         aria-labelledby="gs-group-messages-export-h">
+      <h1 id="gs-group-messages-export-h" i18n:translate="page-header">
+        Export messages from
+        <span class="group" i18n:name="groupName"
+              tal:content="view/groupInfo/name">this group</span>
+      </h1>
+      <p i18n:translate="page-intro" class="muted intro">
+        Posts. <code>mbox</code>. concatenated. Stuff.
+      </p>
+      <div id="gs-group-messages-export-list" role="list">
+        <tal:block repeat="month view/months">
+          <div class="gs-group-messages-export-list-item"
+               tal:attributes="id string:gs-group-messages-export-list-item-${month/year}${month/month};
+                               aria-labelledby string:gs-group-messages-export-list-item-${month/year}${month/month}-h"
+               role="listitem">
+            <h2 tal:attributes="id string:gs-group-messages-export-list-item-${month/year}${month/month}-h"
+              tal:content="python:month['date'].strftime('%Y %b')">A month</h2>
+          </div><!--gs-group-messages-export-list-item-->
+        </tal:block>
+      </div><!--gs-group-messages-export-list-->
+    </div><!--a-page-->
+  </body>
+</html>
