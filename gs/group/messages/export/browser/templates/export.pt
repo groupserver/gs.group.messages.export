@@ -75,6 +75,7 @@
     </div><!--gs-group-messages-export-->
     <script metal:fill-slot="javascript" id="gs-group-messages-export-script"
             type="text/javascript" defer="defer"
+            tal:attributes="url string:${view/groupInfo/relativeURL}/messages/"
             src="/++resource++gs-group-messages-export-20150210.js"> </script>
   </body>
 </html>

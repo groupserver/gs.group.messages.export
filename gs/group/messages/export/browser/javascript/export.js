@@ -11,10 +11,9 @@
 // FITNESS FOR A PARTICULAR PURPOSE.
 jQuery.noConflict();
 
-function GSGroupMessagesExport(progressBar, month) {
+function GSGroupMessagesExport(progressBar, month, baseUrl) {
     var posts=null, toProcess=null, processed=null, currPost=null,
         postsUrl=null, postUrl=null, GENERATED='generated_event';
-    var baseUrl ='http://ogn/groups/team/messages/'; //FIXME
 
     function send_posts_request() {
         var settings=null;
@@ -112,11 +111,11 @@ function GSGroupMessagesExport(progressBar, month) {
     }
 }
 
-function gs_group_messages_export_click(eventObject) {
+function gs_group_messages_export_click(event) {
     var month=null, generate=null, save=null, progress=null, exporter=null;
     jQuery('.gs-group-messages-export-list-item-buttons-generate')
         .attr('disabled', 'disabled');
-    generate = jQuery(eventObject.target);
+    generate = jQuery(event.target);
     month = generate.data('month');
     console.info(month);
     progress = generate.parents('.gs-group-messages-export-list-item')
@@ -125,11 +124,14 @@ function gs_group_messages_export_click(eventObject) {
     save = generate.parents('.gs-group-messages-export-list-item-buttons')
         .find('.gs-group-messages-export-list-item-buttons-save');
 
-    exporter = GSGroupMessagesExport(progress.find('.bar-progress'), month);
+    exporter = GSGroupMessagesExport(progress.find('.bar-progress'), month,
+                                    event.data);
     exporter.generate();
 }
 
 jQuery(window).load(function () {
+    var messagesUrl=null;
+    messagesUrl = jQuery('#gs-group-messages-export-script').data('url');
     jQuery('.gs-group-messages-export-list-item-buttons-generate')
-        .click(gs_group_messages_export_click);
+        .click(messagesUrl, gs_group_messages_export_click);
 });
