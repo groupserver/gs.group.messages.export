@@ -1,0 +1,8 @@
+<li xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    i18n:domain="gs.group.messages.export"
+    id="gs-group-messages-export-link">
+  <a tal:attributes="href string:${view/groupInfo/relativeURL}/messages/export.html"
+     href="export.html"
+     i18n:translate="admin-link"><strong>Export</strong> messages</a>
+</li>

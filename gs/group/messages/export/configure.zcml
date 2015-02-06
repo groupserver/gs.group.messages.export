@@ -16,6 +16,16 @@
 
   <include package="zope.viewlet" file="meta.zcml" />
 
+  <!-- Link to the page -->
+  <browser:viewlet
+    name="gs-group-messages-export-link"
+    manager="gs.group.member.info.interfaces.IGroupMemberAdminLinks"
+    class="gs.group.member.viewlet.GroupAdminViewlet"
+    template="browser/templates/link.pt"
+    permission="zope2.ManageUsers"
+    weight="76"
+    title="Export the posts" />
+
   <browser:page
     name="export.html"
     for="Products.XWFMailingListManager.interfaces.IGSMessagesFolder"
