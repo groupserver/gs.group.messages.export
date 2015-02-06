@@ -69,7 +69,7 @@ function GSGroupMessagesExport(progressBar, month, baseUrl) {
         settings = {
             accepts: 'text/plain',
             async: true,
-            cache: false,
+            cache: true, // Posts are immutable
             contentType: false,
             crossDomain: false,
             data: null,
@@ -87,13 +87,23 @@ function GSGroupMessagesExport(progressBar, month, baseUrl) {
     }//send_post_request
 
     function post_request_success(data, textStatus, jqXHR) {
-        console.info(data);
+        sessionStorage.setItem(currPost, data);
         post_next();
     }
 
     function post_request_error(jqXHR, textStatus, errorThrown) {
         console.error(errorThrown);
         post_next();
+    }
+
+    function get_posts() {
+        var retval=null, postId=null, post=null;
+        for (var i in posts) {
+            postId = posts[i];
+            post = sessionStorage.getItem(postId);
+            retval += post + '\r\n\r\n';
+        }
+        return retval;
     }
 
     function init() {
@@ -104,28 +114,62 @@ function GSGroupMessagesExport(progressBar, month, baseUrl) {
 
     return {
         generate: function () {
-            var posts = null;
             send_posts_request();
+        },
+        save: function() {
+            return get_posts();
+        },
+        clear: function() {
+            var postId=null;
+            for (var i in posts) {
+                postId = posts[i];
+                console.info(postId);
+                sessionStorage.removeItem(postId);
+            }
         },
         GENERATED_EVENT: GENERATED
     }
 }
 
 function gs_group_messages_export_click(event) {
-    var month=null, generate=null, save=null, progress=null, exporter=null;
+    var month=null, generate=null, save=null, progress=null, progressBar=null,
+        exporter=null;
+    // Disable all the Generate buttons. No playing silly buggers.
     jQuery('.gs-group-messages-export-list-item-buttons-generate')
         .attr('disabled', 'disabled');
+
     generate = jQuery(event.target);
-    month = generate.data('month');
-    console.info(month);
+
+    // Show the progress bar
     progress = generate.parents('.gs-group-messages-export-list-item')
         .find('.progress');
     progress.removeClass('hide');
+
+    // Set up the exporter
+    progressBar = progress.find('.bar-progress');
+    month = generate.data('month');
+    exporter = GSGroupMessagesExport(progressBar, month, event.data);
+
     save = generate.parents('.gs-group-messages-export-list-item-buttons')
         .find('.gs-group-messages-export-list-item-buttons-save');
 
-    exporter = GSGroupMessagesExport(progress.find('.bar-progress'), month,
-                                    event.data);
+    progressBar.on(exporter.GENERATED_EVENT, function (event) {
+        var data=null, dataUri=null;
+        save.removeAttr('disabled');
+        data = exporter.save();
+        // Close to utter madness
+        dataUri = 'data:text/plain;charset=utf-8,' + escape(data);
+        exporter.clear();
+        save.attr('href', dataUri);
+        save.removeAttr('disabled');
+        // Turn the Generate buttons on
+        jQuery('.gs-group-messages-export-list-item-buttons-save[disabled]')
+            .parents('.gs-group-messages-export-list-item-buttons')
+            .find('.gs-group-messages-export-list-item-buttons-generate')
+            .removeAttr('disabled');
+        // For the one the person just cicked.
+        generate.attr('disabled', 'disabled');
+    });
     exporter.generate();
 }
 

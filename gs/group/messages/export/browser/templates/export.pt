@@ -59,12 +59,12 @@
                       tal:define="m python:month['date'].strftime('%Y%m');"
                       tal:attributes="data-month m"
                       i18n:translate="generate-future">Generate</button>
-              <button class="btn" href="#" data-icon="&#xe002;"
-                      disabled="disabled"
+              <a class="btn gs-group-messages-export-list-item-buttons-save"
+                      href="#" data-icon="&#xe002;" disabled="disabled"
                       download="posts.mbox"
                       tal:attributes="download string:${view/siteInfo/id}-${view/groupInfo/id}-posts-${month/year}-${month/month}.mbox"
                       i18n:attributes="download"
-                      i18n:translate="save">Save</button>
+                      i18n:translate="save">Save</a>
             </div><!--gs-group-messages-export-list-item-buttons-->
             <div class="progress hide">
               <div class="bar bar-progress"></div>
@@ -75,7 +75,7 @@
     </div><!--gs-group-messages-export-->
     <script metal:fill-slot="javascript" id="gs-group-messages-export-script"
             type="text/javascript" defer="defer"
-            tal:attributes="url string:${view/groupInfo/relativeURL}/messages/"
+            tal:attributes="data-url string:${view/groupInfo/relativeURL}/messages/"
             src="/++resource++gs-group-messages-export-20150210.js"> </script>
   </body>
 </html>
