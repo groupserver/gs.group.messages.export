@@ -12,8 +12,8 @@
 jQuery.noConflict();
 
 function GSGroupMessagesExport(progressBar, month, baseUrl) {
-    var posts=null, toProcess=null, processed=null, currPost=null,
-        postsUrl=null, postUrl=null, GENERATED='generated_event';
+    var postIds=null, toProcessIds=null, processedIds=null, currPost=null,
+        posts=null, postsUrl=null, postUrl=null, GENERATED='generated_event';
 
     function send_posts_request() {
         var settings=null;
@@ -40,9 +40,10 @@ function GSGroupMessagesExport(progressBar, month, baseUrl) {
     }//send_request
 
     function posts_request_success(data, textStatus, jqXHR) {
-        posts = data;
-        toProcess = data.slice(0);
-        processed = []
+        postIds = data;
+        toProcessIds = data.slice(0);
+        processedIds = [];
+        posts = [];
         post_next();
     }//posts_request_success
 
@@ -52,14 +53,15 @@ function GSGroupMessagesExport(progressBar, month, baseUrl) {
 
     function post_next() {
         var pc=0;
-        currPost = toProcess.pop();
+        currPost = toProcessIds.pop();
         if (currPost) {
             send_post_request(currPost);
+            pc = (((postIds.length - toProcessIds.length)
+                   / (postIds.length * 1.0)) * 100);
+            progressBar.css('width', pc.toString()+'%');
         } else {
             progressBar.trigger(GENERATED);
         }
-        pc = ((posts.length - toProcess.length) / (posts.length * 1.0)) * 100;
-        progressBar.css('width', pc.toString()+'%');
     }//post_next
 
     function send_post_request(postId) {
@@ -87,7 +89,10 @@ function GSGroupMessagesExport(progressBar, month, baseUrl) {
     }//send_post_request
 
     function post_request_success(data, textStatus, jqXHR) {
-        sessionStorage.setItem(currPost, data);
+        var blob=null;
+        processedIds.push(currPost);
+        blob = new Blob([data, '\n\n'], {type: 'text/plain'});
+        posts.push(blob);
         post_next();
     }
 
@@ -96,13 +101,10 @@ function GSGroupMessagesExport(progressBar, month, baseUrl) {
         post_next();
     }
 
-    function get_posts() {
-        var retval=null, postId=null, post=null;
-        for (var i in posts) {
-            postId = posts[i];
-            post = sessionStorage.getItem(postId);
-            retval += post + '\r\n\r\n';
-        }
+    function get_posts_uri() {
+        var retval=null, blob=null;
+        blob = new Blob(posts, {type: 'text/plain'});
+        retval = URL.createObjectURL(blob);
         return retval;
     }
 
@@ -116,16 +118,12 @@ function GSGroupMessagesExport(progressBar, month, baseUrl) {
         generate: function () {
             send_posts_request();
         },
-        save: function() {
-            return get_posts();
+        get_save_url: function() {
+            return get_posts_uri();
         },
         clear: function() {
-            var postId=null;
-            for (var i in posts) {
-                postId = posts[i];
-                console.info(postId);
-                sessionStorage.removeItem(postId);
-            }
+            // Oi! Garbage collector! Over here!
+            postIds = toProcessIds = processedIds = currPost = posts = null;
         },
         GENERATED_EVENT: GENERATED
     }
@@ -154,13 +152,12 @@ function gs_group_messages_export_click(event) {
         .find('.gs-group-messages-export-list-item-buttons-save');
 
     progressBar.on(exporter.GENERATED_EVENT, function (event) {
-        var data=null, dataUri=null;
+        var dataUri=null;
         save.removeAttr('disabled');
-        data = exporter.save();
         // Close to utter madness
-        dataUri = 'data:text/plain;charset=utf-8,' + escape(data);
-        exporter.clear();
+        dataUri = exporter.get_save_url();
         save.attr('href', dataUri);
+        exporter.clear();
         save.removeAttr('disabled');
         // Turn the Generate buttons on
         jQuery('.gs-group-messages-export-list-item-buttons-save[disabled]')
