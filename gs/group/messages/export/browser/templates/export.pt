@@ -21,8 +21,9 @@
      </li>
       <li>
         <a class="group" href="/"
-           tal:attributes="href view/groupInfo/relativeURL"
-           tal:content="view/groupInfo/name">This group</a>
+           tal:attributes="href view/groupInfo/relativeURL">
+           <strong
+             tal:content="view/groupInfo/name">This group</strong></a>
      </li>
      <li i18n:translate="export-label">Export messages</li>
     </ul>
