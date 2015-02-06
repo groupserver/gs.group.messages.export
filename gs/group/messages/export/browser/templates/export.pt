@@ -62,7 +62,8 @@
               <a class="btn gs-group-messages-export-list-item-buttons-save"
                       href="#" data-icon="&#xe002;" disabled="disabled"
                       download="posts.mbox"
-                      tal:attributes="download string:${view/siteInfo/id}-${view/groupInfo/id}-posts-${month/year}-${month/month}.mbox"
+                      tal:define="m python:month['date'].strftime('%Y-%m');"
+                      tal:attributes="download string:${view/siteInfo/id}-${view/groupInfo/id}-posts-${m}.mbox"
                       i18n:attributes="download"
                       i18n:translate="save">Save</a>
             </div><!--gs-group-messages-export-list-item-buttons-->
