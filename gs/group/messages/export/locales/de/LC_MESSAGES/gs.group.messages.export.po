@@ -1,18 +1,22 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gs.group.messages.export\n"
 "POT-Creation-Date: 2015-02-06 23:35+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"PO-Revision-Date: 2015-02-18 19:57+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: German (http://www.transifex.com/projects/p/gs-group-messages-export/language/de/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Domain: gs.group.messages.export\n"
+"Language: de\n"
 "Language-Code: en\n"
 "Language-Name: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
 
 #. Default: "<strong>Export</strong> messages"
 #: ./browser/templates/link.pt:5
@@ -34,7 +38,12 @@ msgstr ""
 msgid "page-header"
 msgstr ""
 
-#. Default: "To save the posts made to ${groupName} as an <code>mbox</code> file select a month and click the <samp class=\"button\">Generate</samp> button. An <code>mbox</code> file containing all posts in that month will be generated and the <samp class=\"button\">Save</samp> button made available. Click the <samp class=\"button\">Save</samp> button to store the <code>mbox</code> file."
+#. Default: "To save the posts made to ${groupName} as an <code>mbox</code>
+#. file select a month and click the <samp class=\"button\">Generate</samp>
+#. button. An <code>mbox</code> file containing all posts in that month will
+#. be generated and the <samp class=\"button\">Save</samp> button made
+#. available. Click the <samp class=\"button\">Save</samp> button to store the
+#. <code>mbox</code> file."
 #: ./browser/templates/export.pt:38
 msgid "page-intro"
 msgstr ""
@@ -43,4 +52,3 @@ msgstr ""
 #: ./browser/templates/export.pt:62
 msgid "save"
 msgstr ""
-
