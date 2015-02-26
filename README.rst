@@ -7,7 +7,7 @@ Export messages from a GroupServer group
 
 :Author: `Michael JasonSmith`_
 :Contact: Michael JasonSmith <mpj17@onlinegroups.net>
-:Date: 2015-03-04
+:Date: 2015-02-26
 :Organization: `GroupServer.org`_
 :Copyright: This document is licensed under a
   `Creative Commons Attribution-Share Alike 4.0 International License`_
@@ -69,8 +69,12 @@ information).
 Resources
 =========
 
-- Code repository: https://github.com/groupserver/gs.group.messages.export
-- Questions and comments to http://groupserver.org/groups/development
+- Code repository:
+  https://github.com/groupserver/gs.group.messages.export
+- Translations:
+  https://www.transifex.com/projects/p/gs-group-messages-export/
+- Questions and comments to
+  http://groupserver.org/groups/development
 - Report bugs at https://redmine.iopen.net/projects/groupserver
 
 .. _GroupServer: http://groupserver.org/

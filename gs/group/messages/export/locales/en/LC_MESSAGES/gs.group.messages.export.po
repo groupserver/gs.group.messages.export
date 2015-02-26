@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-06 23:35+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"POT-Creation-Date: 2015-02-26 22:36+0000\n"
+"PO-Revision-Date: 2015-02-26 14:56-0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,30 +17,40 @@ msgstr ""
 #. Default: "<strong>Export</strong> messages"
 #: ./browser/templates/link.pt:5
 msgid "admin-link"
-msgstr ""
+msgstr "<strong>Export</strong> messages"
 
 #. Default: "Export messages"
-#: ./browser/templates/export.pt:9
+#: ./browser/templates/export.pt:31
 msgid "export-label"
-msgstr ""
+msgstr "Export messages"
+
+#. Default: "Export messages: ${groupName}: ${siteName}"
+#: ./browser/templates/export.pt:12
+msgid "export-page-title"
+msgstr "Export messages: ${groupName}: ${siteName}"
 
 #. Default: "Generate"
-#: ./browser/templates/export.pt:57
+#: ./browser/templates/export.pt:61
 msgid "generate-future"
-msgstr ""
+msgstr "Generate"
 
 #. Default: "Export messages from ${groupName}"
-#: ./browser/templates/export.pt:33
+#: ./browser/templates/export.pt:37
 msgid "page-header"
-msgstr ""
+msgstr "Export messages from ${groupName}"
 
 #. Default: "To save the posts made to ${groupName} as an <code>mbox</code> file select a month and click the <samp class=\"button\">Generate</samp> button. An <code>mbox</code> file containing all posts in that month will be generated and the <samp class=\"button\">Save</samp> button made available. Click the <samp class=\"button\">Save</samp> button to store the <code>mbox</code> file."
-#: ./browser/templates/export.pt:38
+#: ./browser/templates/export.pt:42
 msgid "page-intro"
-msgstr ""
+msgstr "To save the posts made to ${groupName} as an <code>mbox</code> file select a month and click the <samp class=\\\"button\\\">Generate</samp> button. An <code>mbox</code> file containing all posts in that month will be generated and the <samp class=\\\"button\\\">Save</samp> button made available. Click the <samp class=\\\"button\\\">Save</samp> button to store the <code>mbox</code> file."
 
 #. Default: "Save"
-#: ./browser/templates/export.pt:62
+#: ./browser/templates/export.pt:66
 msgid "save"
-msgstr ""
+msgstr "Save"
+
+#. Default: "Site home page"
+#: ./browser/templates/export.pt:21
+msgid "site-home-link"
+msgstr "Site home page"
 

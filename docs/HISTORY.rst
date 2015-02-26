@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.0.1 (2015-02-26)
+------------------
+
+* Pointing at Transifex_ for the internationalisation
+
+.. _Transifex: https://www.transifex.com/projects/p/gs-group-messages-export/
 
 1.0.0 (2015-02-06)
 ------------------

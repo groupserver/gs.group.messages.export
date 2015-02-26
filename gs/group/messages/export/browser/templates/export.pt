@@ -5,10 +5,12 @@
       i18n:domain="gs.group.messages.export"
       metal:use-macro="context/@@groupserver_full_layout/page">
   <head>
-    <title metal:fill-slot="title">
-      <tal:block i18n:translate="export-label">Export messages</tal:block>:
-      <tal:block replace="view/groupInfo/name">This group</tal:block>:
-      <tal:block replace="view/siteInfo/name">This site</tal:block>
+    <title metal:fill-slot="title" i18n:translate="export-page-title">
+      Export messages:
+      <tal:block i18n:name="groupName"
+                 replace="view/groupInfo/name">This group</tal:block>:
+      <tal:block i18n:name="siteName"
+                 replace="view/siteInfo/name">This site</tal:block>
     </title>
   </head>
   <body>
@@ -16,7 +18,8 @@
       <li>
         <a href="/" class="icon-alone">
           <span aria-hidden="true" data-icon="&#x2302;"></span>
-          <span class="screen-reader-text">Site home page</span>
+          <span class="screen-reader-text"
+                i18n:translate="site-home-link">Site home page</span>
         </a>
      </li>
       <li>
