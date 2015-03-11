@@ -3,7 +3,5 @@ host = https://www.transifex.com
 
 [gs-group-messages-export.gs-group-messages-export-pot]
 file_filter = gs/group/messages/export/locales/<lang>/LC_MESSAGES/gs.group.messages.export.po
-source_file = gs/group/messages/export/locales/gs.group.messages.export.pot
 source_lang = en
 type = PO
-
