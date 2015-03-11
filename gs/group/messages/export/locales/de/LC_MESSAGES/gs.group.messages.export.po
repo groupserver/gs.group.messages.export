@@ -1,17 +1,16 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
+# 
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: gs.group.messages.export\n"
 "POT-Creation-Date: 2015-02-26 22:36+0000\n"
-"PO-Revision-Date: 2015-02-26 22:57+0000\n"
+"PO-Revision-Date: 2015-03-11 23:20+0000\n"
 "Last-Translator: Michael JasonSmith <mpj17@onlinegroups.net>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/gs-group-messages-export/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Domain: gs.group.messages.export\n"
+"Domain: DOMAIN\n"
 "Language: de\n"
 "Language-Code: en\n"
 "Language-Name: English\n"
