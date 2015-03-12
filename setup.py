@@ -38,6 +38,7 @@ setup(
         "Intended Audience :: Developers",
         'License :: OSI Approved :: Zope Public License',
         "Natural Language :: English",
+        "Natural Language :: French",
         "Operating System :: POSIX :: Linux",
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
@@ -53,6 +54,8 @@ setup(
     zip_safe=False,
     install_requires=[
         'setuptools',
+        'zope.i18n[compile]',
+        'zope.i18nmessageid',
         'zope.tal',
         'zope.tales',
         'zope.viewlet',
