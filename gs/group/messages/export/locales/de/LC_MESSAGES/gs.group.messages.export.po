@@ -1,11 +1,12 @@
 # 
 # Translators:
+# Alice Rose <heldinz@posteo.de>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: gs.group.messages.export\n"
 "POT-Creation-Date: 2015-02-26 22:36+0000\n"
-"PO-Revision-Date: 2015-03-11 23:20+0000\n"
-"Last-Translator: Michael JasonSmith <mpj17@onlinegroups.net>\n"
+"PO-Revision-Date: 2015-06-04 09:59+0000\n"
+"Last-Translator: Alice Rose <heldinz@posteo.de>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/gs-group-messages-export/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,27 +21,27 @@ msgstr ""
 #. Default: "<strong>Export</strong> messages"
 #: ./browser/templates/link.pt:5
 msgid "admin-link"
-msgstr ""
+msgstr "Beiträge <strong>exportieren</strong>"
 
 #. Default: "Export messages"
 #: ./browser/templates/export.pt:31
 msgid "export-label"
-msgstr ""
+msgstr "Beiträge exportieren"
 
 #. Default: "Export messages: ${groupName}: ${siteName}"
 #: ./browser/templates/export.pt:12
 msgid "export-page-title"
-msgstr ""
+msgstr "Beiträge exportieren: ${groupName}: ${siteName}"
 
 #. Default: "Generate"
 #: ./browser/templates/export.pt:61
 msgid "generate-future"
-msgstr ""
+msgstr "Erzeugen"
 
 #. Default: "Export messages from ${groupName}"
 #: ./browser/templates/export.pt:37
 msgid "page-header"
-msgstr ""
+msgstr "Beiträge in ${groupName} exportieren"
 
 #. Default: "To save the posts made to ${groupName} as an <code>mbox</code>
 #. file select a month and click the <samp class=\"button\">Generate</samp>
@@ -55,9 +56,9 @@ msgstr ""
 #. Default: "Save"
 #: ./browser/templates/export.pt:66
 msgid "save"
-msgstr ""
+msgstr "Speichern"
 
 #. Default: "Site home page"
 #: ./browser/templates/export.pt:21
 msgid "site-home-link"
-msgstr ""
+msgstr "Startseite"

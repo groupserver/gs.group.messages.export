@@ -1,6 +1,18 @@
 Changelog
 =========
 
+1.0.3 (2015-06-15)
+------------------
+
+* [DE] Updated German translation, with thanks to Alice_
+* [FR] Updated French translation, with thanks to `Razique
+  Mahroua`_
+
+.. _Alice: http://groupserver.com/p/alice
+  
+.. _Razique Mahroua:
+  https://www.transifex.com/accounts/profile/Razique/
+
 1.0.2 (2015-03-11)
 ------------------
 
@@ -11,7 +23,8 @@ Changelog
 
 * Pointing at Transifex_ for the internationalisation
 
-.. _Transifex: https://www.transifex.com/projects/p/gs-group-messages-export/
+.. _Transifex:
+   https://www.transifex.com/projects/p/gs-group-messages-export/
 
 1.0.0 (2015-02-06)
 ------------------
