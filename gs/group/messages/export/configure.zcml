@@ -55,7 +55,7 @@
   </class>
   <browser:page
     name="mbox"
-    for="gs.group.list.email.text.interfaces.IPost"
+    for="gs.group.list.email.base.interfaces.IPost"
     class=".mbox.MBox"
     permission="zope2.View" />
 

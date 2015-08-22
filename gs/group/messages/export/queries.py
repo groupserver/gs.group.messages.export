@@ -13,11 +13,11 @@
 #
 ############################################################################
 from __future__ import absolute_import, unicode_literals, print_function
-#from operator import and_
+# from operator import and_
 import sqlalchemy as sa
-#from datetime import datetime
-#from pytz import UTC
-#from zope.sqlalchemy import mark_changed
+# from datetime import datetime
+# from pytz import UTC
+# from zope.sqlalchemy import mark_changed
 from gs.database import getSession, getTable
 
 

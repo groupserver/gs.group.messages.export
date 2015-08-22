@@ -21,7 +21,7 @@ from zope.cachedescriptors.property import Lazy
 from zope.component import getMultiAdapter
 from gs.core import curr_time
 from gs.group.base import GroupPage
-from gs.group.list.email.text.post import Post
+from gs.group.list.email.base.post import Post
 from .queries import PostsQuery
 
 

@@ -59,8 +59,16 @@ setup(
         'zope.tal',
         'zope.tales',
         'zope.viewlet',
+        'gs.content.email.base',
         'gs.content.js.bootstrap',
+        'gs.core',
+        'gs.database',
+        'gs.group.base',
+        'gs.group.list.email.base',
+        'gs.group.member.info',
+        'gs.group.member.viewlet',
         'gs.viewlet',
+        'Products.XWFMailingListManager'
     ],
     entry_points="""
     # -*- Entry points: -*-
