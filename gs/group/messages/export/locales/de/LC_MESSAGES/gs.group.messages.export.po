@@ -1,13 +1,14 @@
 # 
 # Translators:
 # Alice Rose <heldinz@posteo.de>, 2015
+# Clara Adele von Randow <cvrandow@freenet.de>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: gs.group.messages.export\n"
 "POT-Creation-Date: 2015-02-26 22:36+0000\n"
-"PO-Revision-Date: 2015-06-04 09:59+0000\n"
-"Last-Translator: Alice Rose <heldinz@posteo.de>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/gs-group-messages-export/language/de/)\n"
+"PO-Revision-Date: 2015-07-28 01:29+0000\n"
+"Last-Translator: Clara Adele von Randow <cvrandow@freenet.de>\n"
+"Language-Team: German (http://www.transifex.com/groupserver/gs-group-messages-export/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,17 +22,17 @@ msgstr ""
 #. Default: "<strong>Export</strong> messages"
 #: ./browser/templates/link.pt:5
 msgid "admin-link"
-msgstr "Beiträge <strong>exportieren</strong>"
+msgstr "Nachrichten <strong>exportieren</strong>"
 
 #. Default: "Export messages"
 #: ./browser/templates/export.pt:31
 msgid "export-label"
-msgstr "Beiträge exportieren"
+msgstr "Nachrichten exportieren"
 
 #. Default: "Export messages: ${groupName}: ${siteName}"
 #: ./browser/templates/export.pt:12
 msgid "export-page-title"
-msgstr "Beiträge exportieren: ${groupName}: ${siteName}"
+msgstr "Nachrichten exportieren: ${groupName}: ${siteName}"
 
 #. Default: "Generate"
 #: ./browser/templates/export.pt:61
@@ -41,7 +42,7 @@ msgstr "Erzeugen"
 #. Default: "Export messages from ${groupName}"
 #: ./browser/templates/export.pt:37
 msgid "page-header"
-msgstr "Beiträge in ${groupName} exportieren"
+msgstr "Nachrichten aus ${groupName} exportieren"
 
 #. Default: "To save the posts made to ${groupName} as an <code>mbox</code>
 #. file select a month and click the <samp class=\"button\">Generate</samp>
@@ -51,7 +52,7 @@ msgstr "Beiträge in ${groupName} exportieren"
 #. <code>mbox</code> file."
 #: ./browser/templates/export.pt:42
 msgid "page-intro"
-msgstr ""
+msgstr "Um die Beiträge in ${groupName} als eine <code>mbox</code> Datei zu sichern, wählen Sie einen Monat aus und klicken sie auf die Schaltfläche <samp class=\"button\">Erzeugen</samp>. Es wird eine <code>mbox</code> Datei mit allen Beiträgen des betreffenden Monats erzeugt und es erscheint die Schaltfläche <samp class=\"button\">Speichern</samp>. Klicken Sie auf  die Schaltfläche <samp class=\"button\">Speichern</samp> um die <code>mbox</code> Datei zu speichern."
 
 #. Default: "Save"
 #: ./browser/templates/export.pt:66
