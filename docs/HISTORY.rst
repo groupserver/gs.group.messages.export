@@ -1,6 +1,15 @@
 Changelog
 =========
 
+1.0.4 (2015-09-09)
+------------------
+
+* [DE] Updated German translation, with thanks to Cousin Clara
+* Following the changes to `gs.group.list.email.post`_
+
+.. _gs.group.list.email.post:
+   https://github.com/groupserver/gs.group.list.email.post
+
 1.0.3 (2015-06-15)
 ------------------
 
@@ -9,7 +18,6 @@ Changelog
   Mahroua`_
 
 .. _Alice: http://groupserver.com/p/alice
-  
 .. _Razique Mahroua:
   https://www.transifex.com/accounts/profile/Razique/
 
