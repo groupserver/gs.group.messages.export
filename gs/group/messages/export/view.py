@@ -99,8 +99,6 @@ property.'''
         self.traverse_subpath.append(name)
         if self.post is None:
             # Load the post, and hook it into the aquisition tree
-            # self.post = Post(self.context, self.groupInfo, name)
-            # Load the post, and hook it into the aquisition tree
             self.post = Post(self, request, name)
         return self
 
