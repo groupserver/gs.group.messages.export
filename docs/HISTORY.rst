@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.0.5 (2015-10-08)
+------------------
+
+* Fixing the code so it actually follows the changes made to
+  `gs.group.list.email.post`_
+
 1.0.4 (2015-09-09)
 ------------------
 
