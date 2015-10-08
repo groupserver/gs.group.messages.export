@@ -50,7 +50,9 @@ class MBox(GroupPage, TextMixin):
 
     @Lazy
     def fileArchive(self):
-        groupObj = self.context.context
+        # The aquisition hierarachy:
+        # MBox (self) / Post / Traversal / Messages / Group
+        groupObj = self.aq_parent.aq_parent.aq_parent.aq_parent
         retval = getattr(groupObj, 'files')
         return retval
 
